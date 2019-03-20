@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementById("btn");
+				var form = document.getElementById("myform");
+				var mytext1 = document.getElementById("mytext1");
+				var mytext2 = document.getElementById("mytext2");
+				btn.onclick = function(){
+					console.log(form.checkValidity());
+					console.log(mytext1.checkValidity());
+					console.log(mytext2.checkValidity());
+//					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form id="myform" novalidate>
+			<input type="text" list="mytext" autocomplete="on" />
+			<datalist id="mytext">
+				<option>马云</option>
+				<option>王宝倩</option>
+				<option>王晓琪</option>
+			</datalist>
+			<input type="text" id="mytext1"  required/>
+			<input type="text" id="mytext2" placeholder="请输入名字" />
+			<input type="text" autofocus/>
+			<input type="text" />
+			<input pattern="^[1][3,4,5,7,8][0-9]{9}$">
+			<input type="submit" id="btn" />
+		</form>
+	</body>
+</html>
